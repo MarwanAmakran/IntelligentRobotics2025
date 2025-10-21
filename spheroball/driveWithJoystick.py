@@ -72,8 +72,8 @@ class SpheroController:
         time.sleep(HEADING_SETTLE)
 
     # ---------- TRAJECT ----------
-  def run_course(self, api):
-    """
+    def run_course(self, api):
+        """
     Volg exact dit parcours (in tegels):
     4.5→, R90, 4→, R90, 2→, R90, 2→, L90, 4→, L90, 2→,
     R90, 2→, R90, 4→, R90, 4→, STOP
