@@ -28,7 +28,7 @@
 
 DynamixelWorkbench dxl_wb;
 
-void setup() 
+bool checkDynamixel() 
 {
   Serial.begin(57600);
   while(!Serial); // Wait for Opening Serial Monitor
@@ -49,7 +49,7 @@ void setup()
   else
   {
     Serial.print("Succeeded to init : ");
-    Serial.println(BAUDRATE);  
+    Serial.println(BAUDRATE);
   }
 
   Serial.println("Wait for scan...");
@@ -57,26 +57,49 @@ void setup()
   if (result == false)
   {
     Serial.println(log);
-    Serial.pri  ntln("Failed to scan");
+    Serial.println("Failed to scan");
+    return false;
   }
   else
   {
     Serial.print("Find ");
     Serial.print(dxl_cnt);
     Serial.println(" Dynamixels");
-
+    int counter = 0;
     for (int cnt = 0; cnt < dxl_cnt; cnt++)
     {
+      counter++;
       Serial.print("id : ");
       Serial.print(scanned_id[cnt]);
       Serial.print(" model name : ");
       Serial.println(dxl_wb.getModelName(scanned_id[cnt]));
     }
+    if (counter >=1) {
+      return true;
+    } else {
+      return false;
+    }
   }  
 }
 
-void loop() 
-{
+bool setMode(int dxl_id, int mode){
+  const char *log;
+  dxl_wb.wheelMode(dxl_id, 0, &log);
+  return true;
+}
+bool setVelocity(int vel1, int vel2){
+  dxl_wb.goalVelocity(1, vel1);
+  dxl_wb.goalVelocity(2, vel2);
+  return true;
 
 }
 
+bool  drive(int vel1, int vel2, int duration){
+    unsigned long lastTime= 0;
+    setVelocity(vel1,vel2);
+  while (millis() - lastTime <= (unsigned long) duration*1000){
+    delay(20);
+  }
+    setVelocity(0,0);
+    return true;
+}
