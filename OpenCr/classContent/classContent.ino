@@ -75,6 +75,9 @@ void loop() {
     printIMU();
     Serial.println("Voltage: " + String(voltage) + " V");
     drive (50,50, 1);
+    drive (100,100,1);
+    drive (0,0,1);
+    drive(-50,50,1);
     delay(500);
     
     delay(1000);  
