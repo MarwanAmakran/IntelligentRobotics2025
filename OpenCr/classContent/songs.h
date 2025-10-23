@@ -2,20 +2,31 @@
 
 
 // notes in the melody:
-// Notes for "Happy Birthday"
+// Twinkle Twinkle Little Star (in C) — we houden de namen gelijk
 int HappyBirthday[] = {
-  NOTE_C4, NOTE_C4, NOTE_D4, NOTE_C4, NOTE_F4, NOTE_E4,  // Happy Birthday to You
-  NOTE_C4, NOTE_C4, NOTE_D4, NOTE_C4, NOTE_G4, NOTE_F4,  // Happy Birthday to You
-  NOTE_C4, NOTE_C4, NOTE_C5, NOTE_A4, NOTE_F4, NOTE_E4, NOTE_D4, // Happy Birthday dear [name]
-  NOTE_AS4, NOTE_AS4, NOTE_A4, NOTE_F4, NOTE_G4, NOTE_F4  // Happy Birthday to You
+NOTE_C4, NOTE_E4, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_G4, NOTE_E4, NOTE_D4,
+  NOTE_C4, NOTE_E4, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_G4, NOTE_E4, NOTE_C4,
+
+  // Pre-chorus lift
+  NOTE_E4, NOTE_F4, NOTE_G4, NOTE_A4, NOTE_G4, NOTE_F4, NOTE_E4, NOTE_D4,
+  NOTE_E4, NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5,
+
+  // Chorus (catchy, hoger register)
+  NOTE_C5, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5,
+  NOTE_C5, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4, NOTE_E4, NOTE_D4, NOTE_C4
 };
 
-// Note durations: 4 = quarter note, 8 = eighth note, etc.
 int noteDurations_HappyBirthday[] = {
-  8, 8, 4, 4, 4, 2,
-  8, 8, 4, 4, 4, 2,
-  8, 8, 4, 4, 4, 4, 2,
-  8, 8, 4, 4, 4, 2
+  4, 8, 8, 4, 8, 8, 4, 2,
+  4, 8, 8, 4, 8, 8, 4, 2,
+
+  // Pre-chorus
+  8, 8, 8, 8, 4, 8, 8, 2,
+  8, 8, 8, 8, 4, 2,
+
+  // Chorus
+  4, 8, 8, 4, 8, 8, 8, 4,
+  4, 8, 8, 4, 8, 8, 4, 2
 };
 
 
