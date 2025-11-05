@@ -28,12 +28,12 @@
 
 DynamixelWorkbench dxl_wb;
 
-int maxSpeed = 100;
+int maxSpeed = 200;
 
 bool checkDynamixel() 
 {
   Serial.begin(57600);
-  while(!Serial); // Wait for Opening Serial Monitor
+  //while(!Serial); // Wait for Opening Serial Monitor
 
   const char *log = NULL;
   bool result = false;
@@ -125,7 +125,7 @@ bool turn(float degrees = 0.0) {
 
   // turn CW
   if (goalYaw > 0) {
-    setVelocity(-50,50);  
+    setVelocity(50,-50);  
     Serial.println("turn CW");
     while (currentYaw <= goalYaw) {
       currentYaw = getYaw();
@@ -136,7 +136,7 @@ bool turn(float degrees = 0.0) {
   }
   //turn CCW 
   if (goalYaw < 0) {
-    setVelocity(50,-50);  
+    setVelocity(-50,-50);  
     Serial.println("turn CCW");
     while (currentYaw >= goalYaw) {
       currentYaw = getYaw();
@@ -146,3 +146,4 @@ bool turn(float degrees = 0.0) {
     return true;
   }
 }
+
