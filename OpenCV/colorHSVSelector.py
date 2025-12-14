@@ -48,7 +48,7 @@ cv2.createTrackbar("Val Min","TrackBars",153,255,empty)
 cv2.createTrackbar("Val Max","TrackBars",255,255,empty)
 
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 while True:
     ret, img = cap.read()

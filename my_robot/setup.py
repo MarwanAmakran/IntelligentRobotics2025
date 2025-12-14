@@ -26,7 +26,11 @@ setup(
     'console_scripts': [
         'battery_publisher = my_robot.battery_publisher:main',
         'battery_subscriber = my_robot.battery_subscriber:main',
+        'serial_teleop = my_robot.serial_teleop:main',
+        'snelheid_teleop = my_robot.snelheid_teleop:main',
+        'teleop = my_robot.teleop:main',
     ],
-},
+    },
+
 
 )
